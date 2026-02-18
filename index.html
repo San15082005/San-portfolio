@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shanmugalakshmi · Aspiring Developer</title>
+    <!-- Professional classic fonts: Inter (clean) & Playfair Display (elegant accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ----- CLASSIC PROFESSIONAL RESET ----- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f5f2f8;
+        color: #2d2a3a;
+        line-height: 1.5;
+        font-size: 15px;
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      /* Typography - refined, smaller, professional */
+      h1,
+      h2,
+      h3,
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #2d2a3a;
+        position: relative;
+      }
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #7c5cff;
+        margin: 0.8rem auto 0;
+        border-radius: 2px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        width: 100%;
+      }
+
+      section {
+        padding: 3.5rem 0;
+        width: 100%;
+      }
+
+      /* ----- NAVIGATION - clean, minimal, fixed hiding issue ----- */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(124, 92, 255, 0.15);
+        padding: 0.8rem 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        width: 100%;
+      }
+      .logo {
+        font-size: 1.4rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #4a3a8a, #7c5cff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+      .nav-menu a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #2d2a3a;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+        white-space: nowrap;
+      }
+      .nav-menu a:hover {
+        color: #7c5cff;
+      }
+      .resume-btn {
+        background: #7c5cff;
+        color: white !important;
+        padding: 0.5rem 1.2rem !important;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      .resume-btn:hover {
+        background: #6244d9;
+        color: white !important;
+      }
+      .hamburger {
+        display: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: #2d2a3a;
+      }
+
+      /* Theme toggle button */
+      .theme-toggle {
+        background: none;
+        border: 1px solid #7c5cff;
+        border-radius: 30px;
+        padding: 0.3rem 1rem;
+        font-size: 0.85rem;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      /* Mobile menu styles - fixed hiding issue */
+      @media (max-width: 900px) {
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background: white;
+          position: absolute;
+          top: 70px;
+          right: 1.5rem;
+          left: auto;
+          width: auto;
+          min-width: 200px;
+          padding: 1.2rem;
+          border-radius: 1rem;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          gap: 1rem;
+          border: 1px solid rgba(124, 92, 255, 0.2);
+          z-index: 1000;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+        .nav-menu li {
+          width: 100%;
+        }
+        .nav-menu a {
+          display: block;
+          padding: 0.5rem 0;
+          width: 100%;
+          text-align: left;
+        }
+        .resume-btn {
+          text-align: center !important;
+        }
+        .hamburger {
+          display: block;
+        }
+        .theme-toggle {
+          margin-right: 0.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-container {
+          padding: 0 1rem;
+        }
+        .logo {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* ----- HERO - balanced, round profile (single profile pic) ----- */
+      #home {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 2.5rem;
+        align-items: center;
+        width: 100%;
+      }
+      .hero-image {
+        text-align: center;
+      }
+      .profile-pic {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 15px 30px rgba(124, 92, 255, 0.2);
+        max-width: 100%;
+      }
+      .hero-content {
+        text-align: left;
+      }
+      .hero-greeting {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #7c5cff;
+        margin-bottom: 0.5rem;
+      }
+      .hero-name {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0.3rem 0 0.5rem;
+        color: #2d2a3a;
+      }
+      .hero-tagline {
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+        font-weight: 400;
+        color: #5a4a7a;
+        margin-bottom: 1rem;
+      }
+      .hero-desc {
+        font-size: 1rem;
+        color: #4a4755;
+        max-width: 500px;
+        margin-bottom: 2rem;
+      }
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 0.7rem 2rem;
+        border-radius: 30px;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: #7c5cff;
+        color: white;
+      }
+      .btn-primary:hover {
+        background: #6244d9;
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1.5px solid #7c5cff;
+        color: #2d2a3a;
+      }
+      .btn-outline:hover {
+        background: #f0ebff;
+      }
+
+      /* ----- ABOUT ----- */
+      .about-card {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+        width: 100%;
+      }
+      .details-list i {
+        width: 1.8rem;
+        color: #7c5cff;
+      }
+      .details-list p {
+        margin: 0.8rem 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        word-break: break-word;
+      }
+
+      /* ----- SKILLS ----- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+      }
+      .skill-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1.2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+        height: 100%;
+      }
+      .skill-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #2d2a3a;
+        font-weight: 600;
+      }
+      .skill-item {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.3rem 0;
+        border-bottom: 1px dashed #e0d5f5;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .skill-item span:first-child {
+        font-weight: 500;
+      }
+      .skill-item span:last-child {
+        color: #7c5cff;
+        font-weight: 600;
+        background: #f0ebff;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+      }
+
+      /* ----- TIMELINE (education) ----- */
+      .timeline-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1.2rem;
+        border-left: 3px solid #7c5cff;
+        width: 100%;
+      }
+
+      /* ----- CERTIFICATIONS grid ----- */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+        width: 100%;
+      }
+      .cert-card {
+        background: white;
+        padding: 1.2rem;
+        border-radius: 1rem;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        height: 100%;
+      }
+
+      /* ----- LANGUAGES badges ----- */
+      .badge {
+        background: white;
+        padding: 0.4rem 1.2rem;
+        border-radius: 30px;
+        border: 1px solid #e0d5f5;
+        font-size: 0.95rem;
+      }
+
+      /* ----- PROJECTS & CONTACT ----- */
+      .project-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+      }
+      .project-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1.2rem;
+        height: 100%;
+      }
+      .contact-card {
+        background: white;
+        max-width: 550px;
+        margin: 0 auto;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        text-align: center;
+        width: 100%;
+      }
+      .footer {
+        text-align: center;
+        padding: 1.5rem;
+        color: #5a4a7a;
+        border-top: 1px solid #e0d5f5;
+        width: 100%;
+      }
+
+      /* ----- SCROLL TOP BUTTON ----- */
+      #scrollTop {
+        position: fixed;
+        bottom: 5rem;
+        right: 1.5rem;
+        background: #7c5cff;
+        color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        transition: 0.2s;
+        pointer-events: none;
+        z-index: 98;
+      }
+      #scrollTop.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* ----- FADE SCROLL ANIMATION ----- */
+      .fade-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ----- CHATBOT - Fully responsive design ----- */
+      .grok-chat-toggle {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #7c5cff;
+        border: none;
+        color: white;
+        font-size: 1.6rem;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(124, 92, 255, 0.3);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .grok-chat-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(124, 92, 255, 0.4);
+      }
+
+      .grok-chat-popup {
+        position: fixed;
+        bottom: 5rem;
+        right: 1.5rem;
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 101;
+        border: 1px solid rgba(124, 92, 255, 0.2);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      /* Responsive chatbot */
+      @media (max-width: 500px) {
+        .grok-chat-popup {
+          width: calc(100% - 2rem);
+          right: 1rem;
+          left: 1rem;
+          bottom: 5rem;
+          height: 60vh;
+          max-height: 500px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .grok-chat-popup {
+          width: calc(100% - 1rem);
+          right: 0.5rem;
+          left: 0.5rem;
+          height: 70vh;
+        }
+      }
+
+      .grok-chat-popup.hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(15px);
+      }
+
+      .grok-chat-header {
+        background: #7c5cff;
+        color: white;
+        padding: 1rem 1.2rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .grok-chat-header span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .grok-chat-header button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        padding: 0.2rem 0.5rem;
+        border-radius: 50%;
+        transition: background 0.2s;
+      }
+      .grok-chat-header button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .grok-chat-messages {
+        flex: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        background: #faf9ff;
+      }
+
+      .grok-message {
+        display: flex;
+        max-width: 85%;
+        animation: fadeInMsg 0.2s ease;
+      }
+      @keyframes fadeInMsg {
+        from {
+          opacity: 0;
+          transform: translateY(5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .grok-message.user {
+        align-self: flex-end;
+      }
+      .grok-message.bot {
+        align-self: flex-start;
+      }
+      .grok-message span {
+        padding: 0.7rem 1.2rem;
+        border-radius: 1.2rem;
+        background: #f0f0f0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+      .grok-message.user span {
+        background: #7c5cff;
+        color: white;
+      }
+      .grok-message.bot span {
+        background: #f0ebff;
+        color: #2d2a3a;
+      }
+
+      .grok-typing span {
+        background: #f0ebff;
+        padding: 0.7rem 1.2rem;
+        position: relative;
+      }
+      .grok-typing span::after {
+        content: "...";
+        animation: dots 1.5s steps(4, end) infinite;
+        display: inline-block;
+        width: 24px;
+        text-align: left;
+      }
+      @keyframes dots {
+        0%,
+        20% {
+          content: ".";
+        }
+        40% {
+          content: "..";
+        }
+        60%,
+        100% {
+          content: "...";
+        }
+      }
+
+      .grok-chat-input-area {
+        display: flex;
+        padding: 0.8rem;
+        background: white;
+        border-top: 1px solid #eae6f5;
+        gap: 0.5rem;
+      }
+      .grok-chat-input-area input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border-radius: 30px;
+        border: 1px solid #ddd;
+        outline: none;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        transition: border-color 0.2s;
+      }
+      .grok-chat-input-area input:focus {
+        border-color: #7c5cff;
+      }
+      .grok-chat-input-area button {
+        background: #7c5cff;
+        border: none;
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, transform 0.1s;
+      }
+      .grok-chat-input-area button:hover:not(:disabled) {
+        background: #6244d9;
+        transform: scale(1.05);
+      }
+      .grok-chat-input-area button:disabled {
+        background: #b8a9f0;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION - fixed hiding issue -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">Shanmugalakshmi</div>
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#" class="resume-btn"
+              ><i class="fas fa-download"></i> Resume</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO with single round profile -->
+    <section id="home">
+      <div class="container hero-grid">
+        <div class="hero-image">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Ccircle cx='120' cy='120' r='115' fill='%237c5cff'/%3E%3Ctext x='120' y='145' font-size='70' text-anchor='middle' fill='white' font-family='Arial'%3ES%3C/text%3E%3C/svg%3E"
+            alt="Shanmugalakshmi"
+            class="profile-pic"
+          />
+        </div>
+        <div class="hero-content">
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1 class="hero-name">Shanmugalakshmi</h1>
+          <p class="hero-tagline">Aspiring Software Developer</p>
+          <p class="hero-desc">
+            Creative developer skilled in HTML, CSS, Python. Passionate about
+            clean interfaces and problem-solving.
+          </p>
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+          <p style="margin-bottom: 1.5rem; font-size: 1.1rem">
+            Computer Science student at Government College of Engineering,
+            Tirunelveli. Passionate about frontend development and building
+            intuitive digital experiences.
+          </p>
+          <div class="details-list">
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Tirunelveli, India – 627356
+            </p>
+            <p><i class="fas fa-envelope"></i> bsandhya1508@gmail.com</p>
+            <p>
+              <i class="fab fa-linkedin"></i> linkedin.com/in/shanmuga-lakshmi
+            </p>
+            <p><i class="fab fa-github"></i> github.com/San15082005</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Programming</h3>
+            <div class="skill-item"><span>Python</span><span>85%</span></div>
+          </div>
+          <div class="skill-card">
+            <h3>Web</h3>
+            <div class="skill-item"><span>HTML</span><span>90%</span></div>
+            <div class="skill-item"><span>CSS</span><span>85%</span></div>
+          </div>
+          <div class="skill-card">
+            <h3>Design</h3>
+            <div class="skill-item"><span>UI Design</span><span>80%</span></div>
+          </div>
+          <div class="skill-card">
+            <h3>Soft Skills</h3>
+            <div class="skill-item">
+              <span>Problem-solving</span><span>95%</span>
+            </div>
+            <div class="skill-item">
+              <span>Creativity</span><span>90%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline-item">
+          <h3>B.E. Computer Science</h3>
+          <p>Government College of Engineering, Tirunelveli · Expected 2027</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-card">🏅 Aptitude Training – SSF</div>
+          <div class="cert-card">💻 Code Pool – NEC</div>
+          <div class="cert-card">🌐 HTML – Great Learning</div>
+          <div class="cert-card">🐍 Python Diploma – CSC</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section id="languages" class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">Languages</h2>
+        <div
+          style="
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <span class="badge">🇬🇧 English (C2)</span>
+          <span class="badge">🇮🇳 Tamil (Native)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-showcase">
+          <div class="project-card">✨ Portfolio 2025</div>
+          <div class="project-card">🧮 Python Calculator</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade-scroll">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-card">
+          <p><i class="fas fa-envelope"></i> bsandhya1508@gmail.com</p>
+          <p>
+            <i class="fab fa-linkedin"></i> linkedin.com/in/shanmuga-lakshmi
+          </p>
+          <p><i class="fab fa-github"></i> github.com/San15082005</p>
+          <button class="btn btn-primary" style="margin-top: 1rem">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Shanmugalakshmi · All rights reserved</p>
+    </footer>
+
+    <button id="scrollTop" title="top">↑</button>
+
+    <!-- GROQ CHATBOT - Fully responsive with live Groq API -->
+    <button class="grok-chat-toggle" id="grokChatToggle">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+    <div class="grok-chat-popup hidden" id="grokChatPopup">
+      <div class="grok-chat-header">
+        <span><i class="fas fa-robot"></i> Groq AI Assistant</span>
+        <button id="grokCloseChat"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="grok-chat-messages" id="grokChatMessages">
+        <div class="grok-message bot">
+          <span
+            >Hi! I'm powered by Groq AI. Ask me anything about Shanmugalakshmi's
+            portfolio!</span
+          >
+        </div>
+      </div>
+      <div class="grok-chat-input-area">
+        <input
+          type="text"
+          id="grokChatInput"
+          placeholder="Type your message..."
+          autocomplete="off"
+        />
+        <button id="grokSendChat"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+    <script>
+      // Navigation - fixed hiding issue
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+
+      hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+
+      // Theme toggle
+      const themeToggle = document.getElementById("themeToggle");
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        themeToggle.innerHTML = document.body.classList.contains("dark")
+          ? '<i class="fas fa-sun"></i>'
+          : '<i class="fas fa-moon"></i>';
+      });
+
+      // Scroll reveal
+      const faders = document.querySelectorAll(".fade-scroll");
+      function checkVisibility() {
+        faders.forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 80)
+            el.classList.add("visible");
+        });
+      }
+      window.addEventListener("scroll", checkVisibility);
+      window.addEventListener("load", checkVisibility);
+
+      // Scroll top
+      const scrollBtn = document.getElementById("scrollTop");
+      window.addEventListener("scroll", () => {
+        scrollBtn.classList.toggle("show", window.scrollY > 400);
+      });
+      scrollBtn.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
+
+      // ==================== GROQ CHATBOT WITH LIVE API ====================
+      // Your provided Groq API key
+      const GROQ_API_KEY =
+        "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";
+      // Using the model you specified
+      const GROQ_MODEL = "openai/gpt-oss-120b";
+
+      // Conversation memory with system prompt about Shanmugalakshmi
+      let conversationHistory = [
+        {
+          role: "system",
+          content: `You are Shanmugalakshmi's friendly AI portfolio assistant powered by Groq. 
+        
+Here's information about Shanmugalakshmi:
+- She is a Computer Science student at Government College of Engineering, Tirunelveli, expected to graduate in 2027.
+- Skills: Python (85%), HTML (90%), CSS (85%), UI Design (80%), Problem-solving (95%), Creativity (90%).
+- Email: bsandhya1508@gmail.com
+- LinkedIn: linkedin.com/in/shanmuga-lakshmi
+- GitHub: github.com/San15082005
+- Certifications: Aptitude Training (SSF Foundation), Code Pool (NEC Kovilpatti), HTML (Great Learning), Python Diploma (CSC Computer Center)
+- Projects: Portfolio 2025 website, Python Calculator application
+
+Rules:
+- Be friendly, conversational, and professional
+- Keep responses concise but informative
+- Answer questions about her skills, education, projects, certifications, and contact information
+- If asked something outside this scope, politely redirect to her portfolio
+- Always maintain a helpful tone`,
+        },
+      ];
+
+      const grokToggle = document.getElementById("grokChatToggle");
+      const grokPopup = document.getElementById("grokChatPopup");
+      const grokClose = document.getElementById("grokCloseChat");
+      const grokMessages = document.getElementById("grokChatMessages");
+      const grokInput = document.getElementById("grokChatInput");
+      const grokSend = document.getElementById("grokSendChat");
+
+      grokToggle.addEventListener("click", () => {
+        grokPopup.classList.toggle("hidden");
+        if (!grokPopup.classList.contains("hidden")) {
+          setTimeout(() => grokInput.focus(), 300);
+        }
+      });
+
+      grokClose.addEventListener("click", () =>
+        grokPopup.classList.add("hidden")
+      );
+
+      // Function to call Groq API with live responses
+      async function sendToGroq(userMessage) {
+        // Add user message to history
+        const userMessageObj = {
+          role: "user",
+          content: userMessage,
+        };
+
+        // Create a copy of history with the new message for this request
+        const messagesForRequest = [...conversationHistory, userMessageObj];
+
+        try {
+          console.log("Sending request to Groq API with model:", GROQ_MODEL);
+
+          const response = await fetch(
+            "https://api.groq.com/openai/v1/chat/completions",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${GROQ_API_KEY}`,
+              },
+              body: JSON.stringify({
+                model: GROQ_MODEL,
+                messages: messagesForRequest,
+                temperature: 0.7,
+                max_tokens: 500,
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            const errorData = await response.text();
+            console.error("Groq API Error Response:", errorData);
+
+            // Try fallback model if the specified model fails
+            if (response.status === 404 || errorData.includes("model")) {
+              console.log("Trying fallback model: llama3-8b-8192");
+              const fallbackResponse = await fetch(
+                "https://api.groq.com/openai/v1/chat/completions",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${GROQ_API_KEY}`,
+                  },
+                  body: JSON.stringify({
+                    model: "llama3-8b-8192",
+                    messages: messagesForRequest,
+                    temperature: 0.7,
+                    max_tokens: 500,
+                  }),
+                }
+              );
+
+              if (!fallbackResponse.ok) {
+                const fallbackError = await fallbackResponse.text();
+                throw new Error(
+                  `Fallback API error: ${fallbackResponse.status} - ${fallbackError}`
+                );
+              }
+
+              const fallbackData = await fallbackResponse.json();
+              const fallbackReply = fallbackData.choices[0].message.content;
+
+              // Add both messages to history only after successful response
+              conversationHistory.push(userMessageObj);
+              conversationHistory.push({
+                role: "assistant",
+                content: fallbackReply,
+              });
+
+              return fallbackReply;
+            }
+
+            throw new Error(`API error: ${response.status} - ${errorData}`);
+          }
+
+          const data = await response.json();
+          const botReply = data.choices[0].message.content;
+
+          // Add both messages to history only after successful response
+          conversationHistory.push(userMessageObj);
+          conversationHistory.push({
+            role: "assistant",
+            content: botReply,
+          });
+
+          return botReply;
+        } catch (error) {
+          console.error("Error calling Groq API:", error);
+          throw error;
+        }
+      }
+
+      function addMessage(text, sender) {
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("grok-message", sender);
+        msgDiv.innerHTML = `<span>${text}</span>`;
+        grokMessages.appendChild(msgDiv);
+        grokMessages.scrollTop = grokMessages.scrollHeight;
+      }
+
+      async function handleSend() {
+        const msg = grokInput.value.trim();
+        if (!msg) return;
+
+        // Disable input while processing
+        grokSend.disabled = true;
+        grokInput.disabled = true;
+
+        // Add user message immediately
+        addMessage(msg, "user");
+        grokInput.value = "";
+
+        // Show typing indicator
+        const typingDiv = document.createElement("div");
+        typingDiv.classList.add("grok-message", "bot", "grok-typing");
+        typingDiv.innerHTML = "<span></span>";
+        grokMessages.appendChild(typingDiv);
+        grokMessages.scrollTop = grokMessages.scrollHeight;
+
+        try {
+          // Get live response from Groq API
+          const reply = await sendToGroq(msg);
+
+          // Remove typing indicator
+          grokMessages.removeChild(typingDiv);
+
+          // Add bot reply
+          addMessage(reply, "bot");
+        } catch (error) {
+          // Remove typing indicator
+          if (typingDiv.parentNode) {
+            grokMessages.removeChild(typingDiv);
+          }
+
+          // Show user-friendly error message
+          let errorMsg =
+            "I'm having trouble connecting to Groq AI. Please try again.";
+
+          if (error.message.includes("401")) {
+            errorMsg = "API key error. Please check your Groq API key.";
+          } else if (error.message.includes("429")) {
+            errorMsg =
+              "Rate limit reached. Please wait a moment and try again.";
+          } else if (error.message.includes("Failed to fetch")) {
+            errorMsg = "Network connection issue. Please check your internet.";
+          } else if (error.message.includes("model")) {
+            errorMsg = "Model not available. Using fallback mode.";
+          }
+
+          addMessage(errorMsg, "bot");
+          console.error("Chat error details:", error);
+        } finally {
+          // Re-enable input
+          grokSend.disabled = false;
+          grokInput.disabled = false;
+          grokInput.focus();
+        }
+      }
+
+      // Event listeners
+      grokSend.addEventListener("click", handleSend);
+      grokInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSend();
+        }
+      });
+
+      // Auto-resize textarea (optional but nice)
+      grokInput.addEventListener("input", function () {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
+      });
+    </script>
+  </body>
+</html>
